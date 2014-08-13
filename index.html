@@ -82,14 +82,38 @@
         <!-- CONTACT -->
         <div class="contact">
             <div class="contact_container">
-                <form class="contact_form">
-                    
+                <form class="contact_form" action="/contact.php" method="post">
+                
+                    <div class="input_name">
+                        <label for="name">* Name:</label><br>
+                        <input type="text" name="name" id="name" class="required">
+                    </div>
+                    <div class="input_email">
+                        <label for="email">* Email:</label><br>
+                        <input type="text" name="email" id="email" class="required">
+                    </div>
+                    <div class="input_message">
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" rows="8"></textarea>
+                    </div>
+
+                    <input type="submit"/>
+
                 </form>
+
+                <div class="social">
+                    <span class="facebook">facebook</span>
+                    <span class="twitter">twitter</span>
+                    <span class="linkedin">linkedin</span>
+                </div>
+
             </div>
         </div>
 
 
         <!-- FOOTER -->
+
+
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
@@ -107,5 +131,6 @@
           ga('send', 'pageview');
 
         </script>
+
     </body>
 </html>

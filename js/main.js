@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var viewport = 	$(window);
+	var viewport = 	$(window), contact = $('.contact_form');
 
 
 
@@ -16,6 +16,7 @@ $(document).ready(function(){
 	// 	$('.mobile_nav').hide();
 	// });
 	
+	
 
 	viewport.on({
 		scroll:function() {
@@ -23,6 +24,13 @@ $(document).ready(function(){
 			bdotm.checkHero();
 		}
 	});
+
+	contact.on({
+		submit: function(event) {
+			event.preventDefault();
+			console.log($(this).serialize());
+		}
+	})
 
 	var bdotm = (function(){
 		var hero= document.getElementById('hero');

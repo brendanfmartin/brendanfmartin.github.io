@@ -120,6 +120,27 @@ h4 {
     background: white;
 }
 
+/* CONTACT */
+.contact {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+}
+
+.contact_container {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    background: white;
+}
+
+textarea, input {
+    width: 100%;
+    max-width: 100%;
+    margin: 5px 0 15px;
+    border: thin solid gray;
+}
+
 
 
 
@@ -162,6 +183,14 @@ h4 {
         font-size: 0;
         line-height: 0
     }
+
+    .contact_container {
+        height: 100%;
+        width: 700px;
+        margin: 0 auto;
+        background: white;
+    }
+
 }
 
 
@@ -170,6 +199,11 @@ h4 {
     *   to match work.              */
 
     .upper_conent_container, .work_container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .contact_container {
         width: 800px;
         margin: 0 auto;
     }

@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Brendan Martin -- Developer, Designer -- @brensmoustache
+
+
+# THANKS
+
+    Stackoverflow users, javascriptkit.com
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, jQuery, Modernizr
+    

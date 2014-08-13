@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Things Teachers Say</title>
+        <meta name="description" content="Only the best and brightest from the schooling">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> 
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
+
+        <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Open+Sans:800italic,400);
+            @import url(http://fonts.googleapis.com/css?family=Playball);
+
+            html, body{
+                height:100%;
+            }
+            .main {
+                height: 100%;
+                width: 100%;
+            }
+            .header {
+                background: white;
+                color:black;
+                font-size: 40px;
+                margin: 0 auto;
+                width: 90%;
+                padding: 20px 5%;
+                font-family: 'Playball', 'cursive';
+                font-weight: 800;
+                box-shadow: 0 1px 10px black;
+            }
+            .quote {
+                color:white;
+                font-family: 'Open Sans', 'sans-serif';
+                font-size: 40px;
+                padding: 100px 0;
+                margin: 0 auto;
+                width: 500px;
+                height: 100px;
+            }
+            .next {
+                width: 100px;
+                height: auto;
+                cursor: pointer;
+                color:white;
+                padding: 100px 0;
+                margin: 0 60%;
+                font-family: 'Open Sans', 'sans-serif';
+                font-size: 30px;
+            }
+            .prevQuoteIndex, .prevColorIndex {
+                display: none;
+            }
+
+            @media all and (max-width: 1001px) {
+                html, body{
+                    height: 100%;
+                }
+                .main {
+                    height: 100%;
+                }
+                .header {
+                    width: 90%;
+                    color:black;
+                    font-size: 20px;
+                    margin: 0 auto;
+                    padding: 5%;
+                    font-weight: 800;
+                    background:white;
+                    box-shadow: 0 1px 10px black;
+                }
+                .quote{
+                    color:white;
+                    font-size: 30px;
+                    padding: 7% 20px;
+                    margin: 0 auto;
+                    width: 100%;
+                    height: 300px;
+                    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+                    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+                    box-sizing: border-box;         /* Opera/IE 8+ */
+                }
+                .next {
+                    position: fixed;
+                    bottom:20px;
+                    right:0;
+                    cursor: pointer;
+                    color: white;
+                    padding:1px;
+                    margin:1px;
+                    height: 30px;
+                    font-size: 25px;
+                }
+                .prevQuoteIndex, .prevColorIndex {
+                    display: none;
+                }
+                .swipe {
+                    height: 100%;
+                    width:0;
+                    float: right;
+                    background: white;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main" class="main">
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+            <div class="header">Things teachers say</div>
+            <div class="swipe"></div>
+            <div id="quote" class="quote"></div>
+            <div class="next">next &#8614;</div>
+            <div class="prevQuoteIndex"></div>
+            <div class="prevColorIndex"></div>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="../js/plugins.js"></script>
+        <script>
+        $(document).ready(function(){
+
+            var quotes = ["What are you wiping on my wall?",
+                "Please don't break the chicken.",
+                "Please keep your pants on.",
+                "Let's not shimmy while holding scissors, please.",
+                "Your braces are broken because I told you not you touch people, and you didn't listen.",
+                "Dropping an encyclopedia on someone's head is frowned upon in this classroom.",
+                "You are too young to be telling someone that you are going to 'pimp slap' them.",
+                "Stop petting each other.",
+                "Please don't lick that.",
+                "In this class, Kush is an ancient African civilization... but thank you for your reference.",
+                "Stop cutting his hair.",
+                "Stop gluing your faces together, please.",
+                "Glue is not chapstick.",
+                "Please do not headbutt the projector screen."
+                ];
+            var colors = ['#3A3A45','#5C3F36', '#607859', '#6A5978', '#527E7C', '#09455C'];
+
+
+
+            var touchsurface = document.getElementById('quote'),
+            startX,
+            startY,
+            dist,
+            threshold = 150, //required min distance traveled to be considered swipe
+            allowedTime = 300, // maximum time allowed to travel that distance
+            elapsedTime,
+            startTime,
+            moveSurface = document.getElementById('quote')
+
+
+
+            function pickRandom(quotes, colors, prevQuoteIndex){
+
+                var randomQuoteIndex = Math.floor(Math.random()* quotes.length);
+                var randomColorIndex = Math.floor(Math.random()* colors.length);
+
+                if(randomQuoteIndex == $('.prevQuoteIndex').text() || randomColorIndex == $('.prevColorIndex').text()) {
+                    pickRandom(quotes, colors, prevQuoteIndex);
+                } else {
+                    $('.main').css('background', colors[randomColorIndex]);
+            
+                    $('.quote').text('');
+                    $('.quote').text(quotes[randomQuoteIndex]);
+                    
+                    $('.prevQuoteIndex').text('');
+                    $('.prevQuoteIndex').text(randomQuoteIndex);
+
+                    $('.prevColorIndex').text('');
+                    $('.prevColorIndex').text(randomColorIndex);
+                }
+            }
+
+            pickRandom(quotes, colors);
+
+            $('.next').click(function(){
+                pickRandom(quotes, colors)
+                $('.swipe').css('width', 0)
+            });
+
+
+            function handleswipe(isLeftSwipe){
+                if (isLeftSwipe) {
+                    pickRandom(quotes, colors);
+                }
+            }
+
+            touchsurface.addEventListener('touchstart', function(e){
+                
+                var touchobj = e.changedTouches[0]
+                dist = 0
+                startX = touchobj.pageX
+                startY = touchobj.pageY
+                startTime = new Date().getTime() // record time when finger first makes contact with surface
+                e.preventDefault()
+
+            }, false)
+
+            touchsurface.addEventListener('touchmove', function(e){
+                e.preventDefault() // prevent scrolling when inside DIV
+                var swipeWidth = parseInt($('.swipe').css('width'), 10);
+                if(swipeWidth < 100)
+                    swipeWidth += 5
+                $('.swipe').css('width', swipeWidth);
+            }, false)
+
+            touchsurface.addEventListener('touchend', function(e){
+                var touchobj = e.changedTouches[0]
+                dist = startX - touchobj.pageX // get total dist traveled by finger while in contact with surface
+                elapsedTime = new Date().getTime() - startTime // get time elapsed
+                // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
+                var isLeftSwipe = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
+                handleswipe(isLeftSwipe)
+                $('.swipe').css('width', 0)
+                e.preventDefault()
+            }, false)
+
+
+        });
+
+
+        </script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-26732029-1', 'bmartist.com');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>

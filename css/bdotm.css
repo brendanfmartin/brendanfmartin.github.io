@@ -191,6 +191,19 @@ textarea, input {
         background: white;
     }
 
+    .input_name, .input_email {
+        width: 40%;
+        float: left;
+    }
+
+    .input_name {
+        margin-right: 20%;
+    }
+
+    .input_message {
+        clear:both;
+    }
+
 }
 
 

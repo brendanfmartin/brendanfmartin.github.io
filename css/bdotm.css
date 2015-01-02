@@ -9,6 +9,7 @@
 4. skills
 5. work
 6. contact
+7. footer
 
 */
 
@@ -33,6 +34,30 @@ h4 {
     margin: 0;
 }
 
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+a:active {
+    text-decoration: underline;
+    color: red;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* GLOBALS */
 .hidden {
     display: none;
 }
@@ -42,52 +67,96 @@ h4 {
 }
 
 
-
 ::-moz-selection { color: black;  background: #FFD6A2; }
-::selection      { color: black;  background: #FFD6A2; } 
+::selection      { color: black;  background: #FFD6A2; }
+
+
+/* FONT AWESOME*/
+.f1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* NAV */
+.nav {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    background: black;
+    position: fixed;
+    z-index: 200;
+}
+
+.nav_link {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: .75em;
+}
 
 
 /* HERO */
 #hero {
     width: 100%;
     height: 100%;
-    background: url('../img/tmp_background.jpg');
+    background: url('../img/tmp_background_small.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
 
 .hero_inner_container {
-    z-index: 9999;
+    z-index: 100;
     height: 200px;
     width: 300px;
     margin: 0 auto;
     text-align: center;
-    padding: 30% 0 0 0;
     color: white;
+    position: relative;
+    top: 60%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.hero_blur {
-    position: fixed;
-    background:black;
-    opacity: .5;
-    height: 100%;
-    width: 100%;
+
+#hero h1 {
+    margin-bottom: 5px;
+}
+.tagline {
+    margin-top: 0;
 }
 
 
 /* UPPER CONTENT */
-
 .upper_content {
+    width: 100%;
+    float: left;
+    clear: both;
     margin: 0 auto;
     padding: 20px 0 40px;
     background-image: url('http://subtlepatterns.com/patterns/noisy.png');
     background-attachment: scroll;
+    text-align: center;
 }
+
 
 /* DESCRIPTION */
-.description {
-
+.upper_content_container {
+    width: 320px;
+    margin: 20px auto;
+    border-bottom: #a5a5a5 1px solid;
 }
+
+.upper_content_header {
+    margin: 0 20px 50px;
+    border-bottom: #a5a5a5 1px solid;
+}
+
+.column {
+    margin: 0 auto 50px;
+    width: 300px;
+}
+
 
 /* SKILLS */
 .skills {
@@ -105,25 +174,49 @@ h4 {
     margin:  auto;
 }
 
+
 /* WORK */
 .work {
     width: 100%;
     height: auto;
+    float: left;
+    clear: both;
     padding: 40px 0;
     background: black;
 }
 
 .work_holder {
-    height: 200px;
+    height: 0;
     width: 200px;
-    margin: 0 auto;
+    padding-top: 200px;
+    margin: 0 auto 50px;
     background: white;
+    overflow: hidden;
+    background: url('http://photography.naturestocklibrary.com/orca-stock-photo.jpg');
+    transition: all 1s;
+    -webkit-transition: all 1s; /* Safari 3.1 to 6.0 */
 }
+.work_holder:hover {
+    height: 100px;
+    padding-top: 100px;
+}
+
+.work_label {
+    height: 100px;
+    background: gray;
+    opacity: .5;
+}
+
+
+
+
 
 /* CONTACT */
 .contact {
     width: 100%;
-    height: auto;
+    height: 350px;
+    float: left;
+    clear:both;
     padding: 40px 0;
 }
 
@@ -136,95 +229,92 @@ h4 {
 
 textarea, input {
     width: 100%;
-    max-width: 100%;
     margin: 5px 0 15px;
+    padding: 5px;
     border: thin solid gray;
+    border-radius: 5px;
+}
+
+input.submit {
+    width: 105%;
+    padding: 10px;
+    background: #6ab262;
+    border-bottom: 5px solid #53894d;
+    border-right: 5px solid #53894d;
+    color: #3b6037;
+    font-weight: 800;
+}
+
+label {
+    font-size: .7em;
 }
 
 
+/* FOOTER */
+.footer {
+    width: 100%;
+    height: 30px;
+    float: left;
+    clear: both;
+    font-size: .75em;
+    background: black;
+    padding: 20px 0 0;
+}
+
+/* SOCIAL */
+.social {
+    width: 100%;
+    text-align: center;
+}
+
+.twitter, .linkedin {
+    padding: 0 15px;
+}
 
 
 /* MEDIA QUERIES */
 
-@media (min-width: 680px) {
+@media (min-width: 980px) {
+    /* NAV */
+    
 
-    .upper_content {
-        overflow: hidden;
+    /* HERO */
+    
+
+    /* UPPER CONTENT */
+    .upper_content_container {
+        width: 1000px;
     }
-    .description, .skills {
-        padding: 10px 5%;
-        width: 40%;
-        float: left;
-        clear: none;
+
+    .upper_content_header {
+        border-bottom: #a5a5a5 1px solid;
     }
-    .work {
-        overflow: hidden;
+
+    .upper_content_header h2 {
+        font-size: 3em;
     }
-    .work_container {
-        width: 700px;
+
+    .description {
         height: 200px;
-        margin: 0 auto;
-        text-align: justify;
-        -ms-text-justify: distribute-all-lines;
-        text-justify: distribute-all-lines;        
-    }
-    .work_holder {
-        width: 200px;
-        height: 200px;
-        vertical-align: top;
-        display: inline-block;
-        *display: inline;
-        zoom: 1
+        margin: 5% auto;
     }
 
-    .stretch {
-        width: 100%;
-        display: inline-block;
-        font-size: 0;
-        line-height: 0
-    }
-
-    .contact_container {
-        height: 100%;
-        width: 700px;
-        margin: 0 auto;
-        background: white;
-    }
-
-    .input_name, .input_email {
-        width: 40%;
+    .column {
         float: left;
+        width: 313px;
+        margin: 0 10px;
     }
 
-    .input_name {
-        margin-right: 20%;
-    }
+    /* WORK */
+    
 
-    .input_message {
-        clear:both;
-    }
+    /* CONTACT */
+
+
+    /* FOOTER */
+    
+
+    /* SOCIAL */
+    
 
 }
-
-
-@media (min-width: 850px) {
-    /*  width to skills and desc    *
-    *   to match work.              */
-
-    .upper_conent_container, .work_container {
-        width: 800px;
-        margin: 0 auto;
-    }
-
-    .contact_container {
-        width: 800px;
-        margin: 0 auto;
-    }
-
-
-}
-
-
-
-
-

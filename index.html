@@ -14,6 +14,7 @@
         <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="img/logo/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/normalize.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/bdotm.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -22,6 +23,13 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        <!-- NAV -->
+        <div class="nav thin">
+            <div class="nav_link"><a href="#about">about</a></div>
+            <div class="nav_link"><a href="#sample">sample</a></div>
+            <div class="nav_link"><a href="#contact">contact</a></div>
+        </div>
 
 
         <!-- HERO -->
@@ -32,64 +40,69 @@
                 </div>
                 <div class="hero_text">
                     <h1>Brendan Martin</h1>
-                    <h3 class="thin">This is a long tagline that we'll use</h3>
+                    <h4 class="tagline thin">This is a long tagline that we'll use</h4>
                 </div>
             </div>
         </div>
-        
-        <!-- HEADER -->
-        
 
 
         <!-- CONTENT -->
-
-        <div class="upper_content">
-            <div class="upper_conent_container">
-                <div class="description">
-                    <h2>User experience defines design</h2>
+        <div class="upper_content" id="about">
+            <div class="upper_content_container">
+            <div class="upper_content_header">
+                <h2>User experience defines design</h2>                
+            </div>
+            <div class="description">
+                <div class="column">
+                    <span class="fa fa-briefcase f1"></span>
                     <h4>Form follows function</h4>
-                    <p>Every design starts with a need. Every need is important. The most imporant part is understanding every need should be addressed. Something else can go here. That'd be nice. Moving between the design and development world provide me with unique view into the creation of software and users experience</p>
+                    <p>Every design starts with a need. Every need is important. The most imporant part is understanding every need should be addressed.</p>
                 </div>
-
-                <div class="skills">
-                    <h2>Skills</h2>
-                    <div class="circle">
-                        
-                    </div>
+                <div class="column">
+                    <span class="fa fa-cloud-download f1"></span>
+                    <h4>Other Title</h4>
+                    <p>Moving between the design and development world provide me with unique view into the creation of software and users experience</p>
                 </div>
+                <div class="column">
+                    <span class="fa fa-cloud-download f1"></span>
+                    <h4>Other Title</h4>
+                    <p>Moving between the design and development world provide me with unique view into the creation of software and users experience</p>
+                </div>
+            </div>
             </div>
         </div>
 
 
         <!-- WORK -->
-
-        <div class="work">
+        <div class="work" id="sample">
             <div class="work_container">
                 <div class="work_holder">
-                    <h2>Work</h2>
+                    <div class="work_label">
+                    </div>
                 </div>
                 <div class="work_holder">
-                    <h2>Work</h2>
+                    <div class="work_label">
+                    </div>
                 </div>
                 <div class="work_holder">
-                    <h2>Work</h2>
+                    <div class="work_label">
+                    </div>
                 </div>
-                <span class="stretch"></span>
             </div>
         </div>
 
 
         <!-- CONTACT -->
-        <div class="contact">
+        <div class="contact" id="contact">
             <div class="contact_container">
                 <form class="contact_form" action="/contact.php" method="post">
                 
                     <div class="input_name">
-                        <label for="name">* Name:</label><br>
+                        <label for="name">Name:</label><br>
                         <input type="text" name="name" id="name" class="required">
                     </div>
                     <div class="input_email">
-                        <label for="email">* Email:</label><br>
+                        <label for="email">Email:</label><br>
                         <input type="text" name="email" id="email" class="required">
                     </div>
                     <div class="input_message">
@@ -97,22 +110,21 @@
                         <textarea name="message" id="message" rows="8"></textarea>
                     </div>
 
-                    <input type="submit"/>
+                    <input type="submit" class="submit" />
 
                 </form>
-
-                <div class="social">
-                    <span class="facebook">facebook</span>
-                    <span class="twitter">twitter</span>
-                    <span class="linkedin">linkedin</span>
-                </div>
 
             </div>
         </div>
 
 
         <!-- FOOTER -->
-
+        <div class="footer">
+            <div class="social">
+                <span class="twitter"><a href="">twitter</a></span>
+                <span class="linkedin"><a href="">linkedin</a></span>
+            </div>
+        </div>
 
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

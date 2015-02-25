@@ -1,4 +1,5 @@
-
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,300);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 /*
 
@@ -231,10 +232,16 @@ a:visited {
 }
 
 .contact_container {
-    height: 200px;
+    height: 380px;
     width: 200px;
     margin: 0 auto;
     background: white;
+}
+
+.contact_header {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 textarea, input {
@@ -323,26 +330,23 @@ label {
 
     .upper_content_long_image {
         height: 400px;
-        width: 600px;
+        width: 1000px;
         float: left;
         background: url('/img/backgrounds/lake_mountains_vintage.jpg');
         background-size: cover;
         background-attachment: fixed;
-    }
-
-    .upper_content_long_desc {
-        height: 320px;
-        width: 320px;
-        float: left;
-        margin: 40px;
+        color: white;
+        font-family: 'Lobster', cursive;
+        -webkit-filter: grayscale(0.6);
     }
 
     .quotes {
-        margin-top: 45%;
+        margin: 110px 170px 0;
         quotes: "\201C""\201D""\2018""\2019";
-
+        font-size: 2.0em;
+        line-height: 2em;
     }
-    .quotes:before {
+    /*.quotes:before {
         color: #ccc;
         content: open-quote;
         font-size: 4em;
@@ -350,7 +354,19 @@ label {
         margin-right: 0.25em;
         vertical-align: -0.4em;
     }
+    .quotes:after {
+        color: #ccc;
+        content: close-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }*/
 
+    .quote_byline {
+        font-family: 'Raleway', sans-serif;
+        margin-top: 40px;
+    }
     .quote_byline:before {
         content: "\2014";
     }
@@ -384,7 +400,32 @@ label {
 
 
     /* CONTACT */
+    .contact_container {
+        width: 600px;
+    }
 
+    label {
+        font-size: 1em;
+    }
+
+    input, .input_name, .input_email {
+        width: 270px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .input_name {
+        margin-right: 60px;
+    }
+
+    textarea {
+        float: left;
+        clear: both;
+    }
+
+    input.submit {
+        width: 614px;
+    }
 
     /* FOOTER */
     

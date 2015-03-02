@@ -14,7 +14,7 @@
         <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="img/logo/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/normalize.css">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/bdotm.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -26,124 +26,121 @@
 
         <!-- NAV -->
         <div class="nav thin">
-            <div class="nav_link"><a href="#about">about</a></div>
-            <div class="nav_link"><a href="#sample">sample</a></div>
-            <div class="nav_link"><a href="#contact">contact</a></div>
+            <div class="nav_logo">
+                <span>brendan martin</span>
+            </div>
+            <div class="nav_links">
+                <span class="nav_link"><a href="#about">about</a></span>
+                <span class="nav_link"><a href="#sample">sample</a></span>
+                <span class="nav_link"><a href="#contact">contact</a></span>
+            </div>
         </div>
 
 
         <!-- HERO -->
-        <div id="hero">
+        <div class="hero thin">
             <div class="hero_inner_container">
                 <div class="hero_image">
                     <img src="img/logo/favicon.ico">
                 </div>
                 <div class="hero_text">
                     <h1>Brendan Martin</h1>
-                    <h4 class="tagline thin">This is a long tagline that we'll use</h4>
                 </div>
             </div>
         </div>
 
+        <!-- BODY CONTAINER -->
+        <div class="body_container">
 
-        <!-- CONTENT -->
-        <div class="upper_content" id="about">
-            <div class="upper_content_container">
+
+            <!-- CONTENT -->
+            <div class="upper_content">
                 <div class="upper_content_header">
-                    <h2>User experience defines design</h2>                
+                    <h2>User experience defines design</h2>  
+                    <p>Tempus adipiscing commodo ut aliquam blandit</p>              
                 </div>
                 <div class="description">
                     <div class="column">
-                        <span class="fa fa-briefcase f1"></span>
-                        <h4>Form follows function</h4>
+                        <span class="fa fa-briefcase fa-5x"></span>
+                        <h4>Web Based Design</h4>
                         <p>Every design starts with a need. Every need is important. The most imporant part is understanding every need should be addressed.</p>
                     </div>
                     <div class="column">
-                        <span class="fa fa-cloud-download f1"></span>
-                        <h4>Other Title</h4>
+                        <span class="fa fa-cloud-download fa-5x"></span>
+                        <h4>Resonsive Design</h4>
                         <p>Moving between the design and development world provide me with unique view into the creation of software and users experience</p>
                     </div>
                     <div class="column">
-                        <span class="fa fa-cloud-download f1"></span>
-                        <h4>Other Title</h4>
+                        <span class="fa fa-cloud-download fa-5x"></span>
+                        <h4>Diverse Stack</h4>
                         <p>Moving between the design and development world provide me with unique view into the creation of software and users experience</p>
                     </div>
                 </div>
+            </div>
 
                 <!--  -->
-                <div class="upper_content_long">
-                    <div class="upper_content_long">
-                        <div class="upper_content_long_image">
-                            <div class="quotes">Simplicity is not the goal. It is the<br>by-product of a good idea and modest expectations.</div>
-                            <div class="quote_byline"> Paul Rand</div>
-                        </div>
-                    </div>
-                   <!--  <div class="upper_content_long">
-                        <div class="upper_content_long_desc">
-                            <div class="quotes">I think most programmers spend the first 5 years of their career mastering complexity, and the rest of their lives learning simplicity.</div>
-                            <div class="quote_byline">Buzz Anderson</div>
-                        </div>
-                        <div class="upper_content_long_image">
-                            
-                        </div>
-                    </div> -->
+            <div class="quote">
+                <div class="quote_image"></div>
+                <div class="quote_content">
+                    I think most programmers spend the first 5 years of their career mastering complexity, and the rest of their lives learning simplicity.
                 </div>
+                <div class="quote_byline">Buzz Anderson</div>
+                <div class="quote_image"></div>
             </div>
-        </div>
 
 
-        <!-- WORK -->
-        <div class="work" id="sample">
-            <div class="work_container">
+            <!-- WORK -->
+            <div class="work">
                 <div class="work_holder">
-                    <div class="work_label">
-                    </div>
+                    <span><i class="fa fa-github fa-5x"></i></span>
+                    <h4>Github</h4>
                 </div>
                 <div class="work_holder">
-                    <div class="work_label">
-                    </div>
+                    <span><i class="fa fa-linkedin fa-5x"></i></span>
+                    <h4>Linkedin</h4>
                 </div>
                 <div class="work_holder">
-                    <div class="work_label">
-                    </div>
+                    <span><i class="fa fa-twitter fa-5x"></i></span>
+                    <h4>Twitter</h4>
+                </div>
+                <div class="work_holder">
+                    <span><i class="fa fa-codepen fa-5x"></i></span>
+                    <h4>Codepen</h4>
                 </div>
             </div>
-        </div>
 
 
-        <!-- CONTACT -->
-        <div class="contact" id="contact">
-            <div class="contact_container">
-                <div class="contact_header">Contact Me</div>
-                <form class="contact_form" action="/contact.php" method="post">
-                
-                    <div class="input_name">
-                        <label for="name">Name:</label><br>
-                        <input type="text" name="name" id="name" class="required">
-                    </div>
-                    <div class="input_email">
-                        <label for="email">Email:</label><br>
-                        <input type="text" name="email" id="email" class="required">
-                    </div>
-                    <div class="input_message">
-                        <label for="message">Message:</label>
-                        <textarea name="message" id="message" rows="8"></textarea>
-                    </div>
+            <!-- CONTACT -->
+            <div class="contact">
+                <div class="contact_container">
+                    <div class="contact_header">Contact Me</div>
+                    <form class="contact_form" action="/contact.php" method="post">
+                    
+                        <div class="input_name">
+                            <label for="name">Name:</label><br>
+                            <input type="text" name="name" id="name" class="required">
+                        </div>
+                        <div class="input_email">
+                            <label for="email">Email:</label><br>
+                            <input type="text" name="email" id="email" class="required">
+                        </div>
+                        <div class="input_message">
+                            <label for="message">Message:</label>
+                            <textarea name="message" id="message" rows="8"></textarea>
+                        </div>
 
-                    <input type="submit" class="submit" />
+                        <input type="submit" class="submit" />
 
-                </form>
+                    </form>
 
+                </div>
             </div>
-        </div>
 
 
-        <!-- FOOTER -->
-        <div class="footer">
-            <div class="social">
-                <span class="twitter"><a href="">twitter</a></span>
-                <span class="linkedin"><a href="">linkedin</a></span>
+            <!-- FOOTER -->
+            <div class="footer">
             </div>
+
         </div>
 
 

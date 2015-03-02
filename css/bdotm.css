@@ -252,8 +252,9 @@ input.submit {
 
 @media (min-width: 980px) {
     body {
-        background-image: url('http://subtlepatterns.com/patterns/noisy.png');
-        background-attachment: scroll;
+        /*background-image: url('http://subtlepatterns.com/patterns/noisy.png');
+        background-attachment: scroll;*/
+        background-color: rgba(240,240,240,.9);
     }
 
     /* NAV */
@@ -361,6 +362,7 @@ input.submit {
         height: 200px;
         margin: 60px auto;
         display: flex;
+        align-items: center;
     }
 
     .work_holder {

@@ -227,29 +227,6 @@ a:visited {
 
 
 
-/* CONTACT */
-.contact {
-
-}
-
-.contact_header {
-}
-
-textarea, input {
-    margin: 5px 0 15px;
-    padding: 5px;
-    border: thin solid gray;
-    border-radius: 5px;
-}
-
-input.submit {
-    padding: 10px;
-    background: rgb(205,205,205);
-    color: rgb(10,10,10);
-    font-weight: 800;
-}
-
-
 
 /* MEDIA QUERIES */
 
@@ -328,14 +305,8 @@ input.submit {
         line-height: 50px;
     }
 
-    .upper_content_long {
-        float: left;
-        clear: both;
-        margin: 20px 0;
-    }
-
     .quote_image {
-        height: 300px;
+        height: 110px;;
         width: 100%;
         float: left;
         background: url(http://templated.co/items/demos/transit/images/dark_tint.png), url('/img/backgrounds/lake_mountains_vintage.jpg');
@@ -383,10 +354,52 @@ input.submit {
         content: "\2014";
     }
 
+    /* EXTRA */
+    .extra {
+        height: 300px;
+        width: 100%;
+        float: left;
+        clear: both;
+        background: rgba(220,220,220,1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .extra_paragraph_container {
+        width: 50%;
+    }
+
+    .extra_paragraph {
+        height: auto;
+        width: 400px;
+        margin: 0 auto;
+        text-align: right;
+        border-top: thin solid gray;
+        border-bottom: thin solid gray;
+    }
+
+    .extra_image {
+        width: 50%;
+    }
+
+        .extra_circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 15px solid gray;
+            border-radius: 100%;
+            text-align: center;
+            font-size: 1.4em;
+        }
+
+        .extra_circle i {
+            padding-top: 25%;
+        }
+
     /* WORK */
     .work {
         height: 200px;
-        margin: 60px auto;
         display: flex;
         align-items: center;
     }
@@ -399,38 +412,17 @@ input.submit {
     }
 
 
-    /* CONTACT */
-    .contact_container {
-        width: 600px;
-    }
-
-    label {
-        font-size: 1em;
-    }
-
-    input, .input_name, .input_email {
-        width: 270px;
-        float: left;
-        margin-bottom: 20px;
-    }
-
-    .input_name {
-        margin-right: 60px;
-    }
-
-    textarea {
-        float: left;
-        clear: both;
-    }
-
-    input.submit {
-        width: 614px;
-    }
-
     /* FOOTER */
     
 
     /* SOCIAL */
     
 
+
+    /* ANIMATIONS */
+    @keyframes rotate {
+        0%   {transform: rotateY(0deg)}
+        50%  {transform: rotateY(90deg)}
+        100% {transform: rotateY(360deg)}
+    }
 }

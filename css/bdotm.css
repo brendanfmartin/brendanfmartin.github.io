@@ -309,7 +309,7 @@ a:visited {
         height: 110px;;
         width: 100%;
         float: left;
-        background: url(http://templated.co/items/demos/transit/images/dark_tint.png), url('/img/backgrounds/lake_mountains_vintage.jpg');
+        background: url('/img/backgrounds/lake_mountains_vintage.jpg');
         background-size: cover;
         background-attachment: fixed;
         -webkit-filter: grayscale(0.6);

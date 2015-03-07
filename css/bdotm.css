@@ -7,14 +7,12 @@
 1. overall
 2. hero
 3. description
-4. skills
-5. work
-6. contact
+4. quote
+5. extra
+6. work
 7. footer
 
 */
-
-
 
 
 
@@ -22,6 +20,7 @@ html, body {
 	width: 100%;
 	height: 100%;
     font-family: Roboto, Helvetica, sans-serif;
+    background-color: rgba(230,230,230,1);
 }
 
 p {
@@ -71,21 +70,6 @@ a:visited {
 
 
 /* FONT AWESOME*/
-.f1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    height: 40px;
-    width: 50px;
-    padding-top: 9px;
-    border-radius: 100%;
-    background: #FFF;
-    background-image: -moz-linear-gradient(45deg, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 0%);
-    background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 0%);
-    background-image: -o-linear-gradient(45deg, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 0%);
-    background-image: -ms-linear-gradient(45deg, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 0%);
-    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 0%);
-}
-
 
 
 /* NAV */
@@ -99,9 +83,9 @@ a:visited {
 }
 
 .nav_logo {
-    /* probably center */
     height: 30px;
     z-index: 300;
+    padding-top: 10px;
 }
 
 .nav_logo h5 {
@@ -128,8 +112,7 @@ a:visited {
 .hero {
     height: 200px;
     width: 100%;
-    background: url('../img/tmp_background_small.jpg');
-    background-image: url(http://templated.co/items/demos/transit/images/dark_tint.png), url('../img/tmp_background_small.jpg');
+    background-image: url('http://templated.co/items/demos/transit/images/dark_tint.png'), url('../img/backgrounds/tmp_background_small.jpg');
     background-position: center center;
     background-size: cover;
     font-family: Roboto, Helvetica, sans-serif;
@@ -191,57 +174,73 @@ a:visited {
     clear: both;
 }
 
+.quote {
+    width: 100%;
+    margin: 0 auto;
+    background: url('/img/backgrounds/lake_mountains_vintage.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+}
+
+.quote_content {
+    margin: 0px auto;
+    width: 75%;
+    padding: 30px 0;
+    line-height: 1.6em;
+}
+
+.quote_byline {
+    font-family: 'Raleway', sans-serif;
+    font-size: .9em;
+    padding: 25px;
+}
+
+.quote_byline:before {
+    content: "\2014";
+}
+
+/* EXTRA */
+.extra_paragraph_container {
+    padding: 10px;
+    margin: 40px;
+    border-top: thin solid gray;
+    border-bottom: thin solid gray;
+}
+.extra_circle {
+    display: none;
+}
 
 /* WORK */
 .work {
     width: 100%;
+    height: 50px;
     clear: both;
     background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.work_container {
-    
+.work_holder {
+    width: 70px;
+    height: 30px;
+    font-size: .3em;
+    text-align: center;
+    float: left;
 }
-
-/*.work_holder {
-    height: 0;
-    width: 200px;
-    padding-top: 200px;
-    margin: 0 auto 50px;
-    background: white;
-    overflow: hidden;
-    transition: all 1s;
-    -webkit-transition: all 1s;
-}
-.work_holder:hover {
-    height: 100px;
-    padding-top: 100px;
-}
-
-.work_label {
-    height: 100px;
-    background: gray;
-    opacity: .5;
-}
-*/
-
-
 
 
 
 /* MEDIA QUERIES */
 
 @media (min-width: 980px) {
-    body {
-        /*background-image: url('http://subtlepatterns.com/patterns/noisy.png');
-        background-attachment: scroll;*/
-        background-color: rgba(240,240,240,.9);
-    }
 
     /* NAV */
     .nav_logo {
-        height: 75px;
-        line-height: 75px;
+        height: 65px;
+        line-height: 55px;
         width: 205px;
         float: left;
     }
@@ -269,6 +268,7 @@ a:visited {
     /* HERO */
     .hero {
         height: 498px;
+        background-image: url('http://templated.co/items/demos/transit/images/dark_tint.png'), url('../img/backgrounds/tmp_background.jpg');
     }
 
     .hero_inner_container {
@@ -310,6 +310,14 @@ a:visited {
         line-height: 50px;
     }
 
+    /* QUOTE */
+
+    .quote {
+        background: rgba(230,230,230, 1);
+        color: rgb(100,100,100);
+        text-shadow: none;
+    }
+
     .quote_image {
         height: 110px;;
         width: 100%;
@@ -325,38 +333,16 @@ a:visited {
         width: 600px;
         margin: 35px auto;
         padding: 35px 0;
+        border-bottom: #a5a5a5 1px solid;
         quotes: "\201C""\201D""\2018""\2019";
         font-size: 2.0em;
         line-height: 2em;
-        border-bottom: #a5a5a5 1px solid;
-        border-top: #a5a5a5 1px solid;
     }
-    /*.quotes:before {
-        color: #ccc;
-        content: open-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        margin-right: 0.25em;
-        vertical-align: -0.4em;
-    }
-    .quotes:after {
-        color: #ccc;
-        content: close-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        margin-right: 0.25em;
-        vertical-align: -0.4em;
-    }*/
 
     .quote_byline {
         height: 60px;
         width: 600px;
-        font-family: 'Raleway', sans-serif;
         margin: 0 auto;
-    }
-
-    .quote_byline:before {
-        content: "\2014";
     }
 
     /* EXTRA */
@@ -373,6 +359,7 @@ a:visited {
 
     .extra_paragraph_container {
         width: 50%;
+        border: none;
     }
 
     .extra_paragraph {
@@ -389,6 +376,7 @@ a:visited {
     }
 
         .extra_circle {
+            display: block;
             width: 200px;
             height: 200px;
             margin: 0 auto;
@@ -412,9 +400,11 @@ a:visited {
 
     .work_holder {
         width: 250px;
+        height: 100%;
         line-height: 50px;
         text-align: center;
         margin: 0 auto;
+        font-size: 1em;
     }
 
 

@@ -431,18 +431,6 @@ a:visited {
     /* WORK */
     .work {
         height: 200px;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-flex-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        justify-content: center;
-        -webkit-justify-content: center;
     }
 
     .work_holder {

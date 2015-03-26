@@ -265,8 +265,7 @@ a.work_link:hover, a.work_link:focus {
 .career_day {
     width: 100%;
     text-align: center;
-    height: 80px;
-    padding: 40px;
+    height: 160px;
 }
 
 .career_day h2 {
@@ -471,5 +470,11 @@ a.work_link:hover, a.work_link:focus {
         margin: 0 auto;
         font-size: 1em;
     }
+
+    .career_day {
+        padding: 40px;
+    }
+
+    
 
 }

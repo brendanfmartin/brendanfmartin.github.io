@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:700,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 /*
 
@@ -259,6 +260,23 @@ a.work_link:hover, a.work_link:focus {
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     transition: all 1s;
+}
+
+.career_day {
+    width: 100%;
+    text-align: center;
+    height: 80px;
+    padding: 40px;
+}
+
+.career_day h2 {
+    font-family: Lobster, sans-serif;
+    font-size: 4em;
+    margin: 0;
+}
+
+.career_day h3 {
+    margin: 0;
 }
 
 
